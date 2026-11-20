@@ -315,3 +315,304 @@ main {
     }
 }
 
+
+/* TELA DE CADASTRO */
+
+.paginaCadastro {
+    min-height: 100vh;
+    background: #000;
+    padding: 25px 20px;
+    color: #FFF;
+}
+
+.voltarInicio {
+    color: #FF7A00;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.conteudoCadastro {
+    width: 100%;
+    max-width: 750px;
+    margin: 55px auto;
+    text-align: center;
+}
+
+.logoCadastro {
+    width: 130px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.conteudoCadastro h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.conteudoCadastro > p {
+    color: #AAA;
+    margin-bottom: 35px;
+}
+
+.opcoesCadastro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.opcaoCadastro {
+    background: #1C1C1C;
+    border: 1px solid #353535;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+.opcaoCadastro:hover {
+    border-color: #FF7A00;
+    transform: translateY(-4px);
+}
+
+.iconeCadastro {
+    font-size: 38px;
+}
+
+.opcaoCadastro h2 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.opcaoCadastro p {
+    color: #AAA;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.textoOpcao {
+    display: inline-block;
+    color: #FF7A00;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .opcoesCadastro {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudoCadastro {
+        margin-top: 35px;
+    }
+}
+
+
+/* FORMULÁRIO DE CADASTRO */
+
+.formularioCadastro {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.formularioCadastro label {
+    color: #FFF;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.formularioCadastro input {
+    width: 100%;
+    padding: 15px;
+    background: #1C1C1C;
+    border: 1px solid #353535;
+    border-radius: 8px;
+    color: #FFF;
+    outline: none;
+}
+
+.formularioCadastro input:focus {
+    border-color: #FF7A00;
+}
+
+.botaoCadastro {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: #FF7A00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.textoLogin {
+    margin-top: 25px;
+    color: #AAA;
+    font-size: 14px;
+}
+
+.textoLogin a {
+    color: #FF7A00;
+    text-decoration: none;
+}
+
+
+/* CAMPO DE SELEÇÃO DO CADASTRO */
+
+.formularioCadastro select {
+    width: 100%;
+    padding: 15px;
+    background: #1C1C1C;
+    border: 1px solid #353535;
+    border-radius: 8px;
+    color: #FFF;
+    outline: none;
+    font-size: 14px;
+}
+
+.formularioCadastro select:focus {
+    border-color: #FF7A00;
+}
+
+.formularioCadastro select option {
+    background: #1C1C1C;
+    color: #FFF;
+}
+
+/* MENU DE LOGIN E CADASTRO */
+
+.menuConta {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menuConta a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menuConta .botaoConta {
+    background: #FF7A00;
+    color: #000000;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .menuConta {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+/* SEÇÃO PARA ESTABELECIMENTOS */
+
+.cadastroEstabelecimento {
+    width: 100%;
+    padding: 60px 20px;
+    background: #1C1C1C;
+    border-top: 1px solid #353535;
+    text-align: center;
+}
+
+.conteudoEstabelecimento {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.conteudoEstabelecimento h2 {
+    color: #FFFFFF;
+    font-size: clamp(22px, 3vw, 30px);
+    margin-bottom: 18px;
+}
+
+.conteudoEstabelecimento p {
+    color: #AAAAAA;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.botaoEstabelecimento {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #FF7A00;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botaoEstabelecimento:hover {
+    background: #FF9533;
+    transform: translateY(-2px);
+}
+
+/* GRUPOS DE SELEÇÃO MÚLTIPLA */
+
+.tituloGrupo {
+    color: #FF7A00;
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.descricaoSelecao {
+    color: #AAAAAA;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.grupoOpcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 8px;
+}
+
+.opcaoMultipla {
+    background: #1C1C1C;
+    color: #FFFFFF;
+    border: 1px solid #353535;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.opcaoMultipla:hover {
+    border-color: #FF7A00;
+}
+
+.opcaoMultipla.selecionado {
+    background: #FF7A00;
+    border-color: #FF7A00;
+    color: #000000;
+    font-weight: bold;
+}
+
+#avisoCategorias {
+    display: block;
+    color: #AAAAAA;
+    margin-top: 5px;
+    font-size: 12px;
+}

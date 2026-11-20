@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuário | VIBY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="paginaCadastro">
+
+        <a href="cadastro.html" class="voltarInicio">← Voltar</a>
+
+        <div class="conteudoCadastro">
+
+            <img src="img/logo.png" alt="Logo Viby" class="logoCadastro">
+
+            <h1>Crie sua conta</h1>
+            <p>Encontre lugares e experiências que combinam com você.</p>
+
+            <form class="formularioCadastro">
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome"
+                    placeholder="Digite seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email"
+                    placeholder="Digite seu e-mail" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha"
+                    placeholder="Crie uma senha" required>
+
+                <label for="confirmarSenha">Confirmar senha</label>
+                <input type="password" id="confirmarSenha"
+                    name="confirmarSenha"
+                    placeholder="Digite a senha novamente" required>
+
+                <button type="submit" class="botaoCadastro">
+                    Criar conta
+                </button>
+
+            </form>
+
+            <p class="textoLogin">
+                Já possui uma conta?
+                <a href="login.html">Fazer login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

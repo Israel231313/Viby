@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de estabelecimento | VIBY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="paginaCadastro">
+
+    <a href="cadastro.html" class="voltarInicio">← Voltar</a>
+
+    <div class="conteudoCadastro">
+
+        <img src="img/logo.png" alt="Logo Viby" class="logoCadastro">
+
+        <h1>Cadastre seu estabelecimento</h1>
+        <p>Apresente seu negócio e ajude as pessoas a encontrarem sua vibe.</p>
+
+        <form class="formularioCadastro" id="formEstabelecimento">
+
+            <h2 class="tituloGrupo">Dados do estabelecimento</h2>
+
+            <label for="nomeEstabelecimento">Nome do estabelecimento</label>
+            <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Nome do estabelecimento" required>
+
+            <label for="cnpj">CNPJ</label>
+            <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required>
+
+            <label for="telefoneEstabelecimento">Telefone</label>
+            <input type="tel" id="telefoneEstabelecimento" name="telefone" placeholder="(42) 99999-9999" required>
+
+            <label for="emailEstabelecimento">E-mail de contato</label>
+            <input type="email" id="emailEstabelecimento" name="email" placeholder="contato@estabelecimento.com" required>
+
+            <label for="enderecoEstabelecimento">Endereço</label>
+            <input type="text" id="enderecoEstabelecimento" name="endereco" placeholder="Rua, número e bairro" required>
+
+
+            <h2 class="tituloGrupo">Categorias</h2>
+            <p class="descricaoSelecao">Selecione até 3 categorias que representam seu estabelecimento.</p>
+
+            <div class="grupoOpcoes" id="grupoCategorias">
+
+                <button type="button" class="opcaoMultipla" data-valor="Bar">Bar</button>
+                <button type="button" class="opcaoMultipla" data-valor="Boteco">Boteco</button>
+                <button type="button" class="opcaoMultipla" data-valor="Restaurante">Restaurante</button>
+                <button type="button" class="opcaoMultipla" data-valor="Hamburgueria">Hamburgueria</button>
+                <button type="button" class="opcaoMultipla" data-valor="Cafeteria">Cafeteria</button>
+                <button type="button" class="opcaoMultipla" data-valor="Padaria">Padaria</button>
+                <button type="button" class="opcaoMultipla" data-valor="Balada">Balada</button>
+                <button type="button" class="opcaoMultipla" data-valor="Casa de shows">Casa de shows</button>
+                <button type="button" class="opcaoMultipla" data-valor="Sorveteria">Sorveteria</button>
+                <button type="button" class="opcaoMultipla" data-valor="Outro">Outro</button>
+
+            </div>
+
+            <small id="avisoCategorias">0 de 3 categorias selecionadas.</small>
+
+
+            <h2 class="tituloGrupo">Estilos</h2>
+            <p class="descricaoSelecao">Quais estilos musicais ou ambientes combinam com seu estabelecimento?</p>
+
+            <div class="grupoOpcoes" id="grupoEstilos">
+
+                <button type="button" class="opcaoMultipla" data-valor="Rock">Rock</button>
+                <button type="button" class="opcaoMultipla" data-valor="Pop">Pop</button>
+                <button type="button" class="opcaoMultipla" data-valor="Sertanejo">Sertanejo</button>
+                <button type="button" class="opcaoMultipla" data-valor="Pagode">Pagode</button>
+                <button type="button" class="opcaoMultipla" data-valor="Samba">Samba</button>
+                <button type="button" class="opcaoMultipla" data-valor="Eletrônica">Eletrônica</button>
+                <button type="button" class="opcaoMultipla" data-valor="MPB">MPB</button>
+                <button type="button" class="opcaoMultipla" data-valor="Jazz">Jazz</button>
+                <button type="button" class="opcaoMultipla" data-valor="Blues">Blues</button>
+                <button type="button" class="opcaoMultipla" data-valor="Reggae">Reggae</button>
+                <button type="button" class="opcaoMultipla" data-valor="Funk">Funk</button>
+                <button type="button" class="opcaoMultipla" data-valor="Gospel">Gospel</button>
+                <button type="button" class="opcaoMultipla" data-valor="Variado">Variado</button>
+
+            </div>
+
+
+            <h2 class="tituloGrupo">Características</h2>
+            <p class="descricaoSelecao">Selecione as características e comodidades disponíveis.</p>
+
+            <div class="grupoOpcoes" id="grupoCaracteristicas">
+
+                <button type="button" class="opcaoMultipla" data-valor="Música ao vivo">Música ao vivo</button>
+                <button type="button" class="opcaoMultipla" data-valor="Área externa">Área externa</button>
+                <button type="button" class="opcaoMultipla" data-valor="Espaço para fumantes">Espaço para fumantes</button>
+                <button type="button" class="opcaoMultipla" data-valor="Ambiente romântico">Ambiente romântico</button>
+                <button type="button" class="opcaoMultipla" data-valor="Espaço kids">Espaço kids</button>
+                <button type="button" class="opcaoMultipla" data-valor="Estacionamento">Estacionamento</button>
+                <button type="button" class="opcaoMultipla" data-valor="Happy hour">Happy hour</button>
+                <button type="button" class="opcaoMultipla" data-valor="Pet friendly">Pet friendly</button>
+                <button type="button" class="opcaoMultipla" data-valor="Wi-Fi">Wi-Fi</button>
+                <button type="button" class="opcaoMultipla" data-valor="Acessibilidade">Acessibilidade</button>
+                <button type="button" class="opcaoMultipla" data-valor="Delivery">Delivery</button>
+                <button type="button" class="opcaoMultipla" data-valor="Comida ao ar livre">Comida ao ar livre</button>
+                <button type="button" class="opcaoMultipla" data-valor="Transmissão de jogos">Transmissão de jogos</button>
+                <button type="button" class="opcaoMultipla" data-valor="Espaço para eventos">Espaço para eventos</button>
+
+            </div>
+
+
+            <h2 class="tituloGrupo">Dados de acesso</h2>
+
+            <label for="senhaProprietario">Senha</label>
+            <input type="password" id="senhaProprietario" name="senha" placeholder="Crie uma senha" required>
+
+            <label for="confirmarSenhaProprietario">Confirmar senha</label>
+            <input type="password" id="confirmarSenhaProprietario" name="confirmarSenha" placeholder="Digite a senha novamente" required>
+
+            <button type="submit" class="botaoCadastro">
+                Cadastrar estabelecimento
+            </button>
+
+        </form>
+
+        <p class="textoLogin">
+            Já possui uma conta?
+            <a href="login.html">Fazer login</a>
+        </p>
+
+    </div>
+
+</main>
+
+<script>
+
+    function configurarSelecao(idGrupo, limite, idAviso) {
+
+        const grupo = document.getElementById(idGrupo);
+        const aviso = document.getElementById(idAviso);
+        const opcoes = grupo.querySelectorAll(".opcaoMultipla");
+
+        opcoes.forEach(function(botao) {
+
+            botao.addEventListener("click", function() {
+
+                const jaSelecionado = botao.classList.contains("selecionado");
+
+                if (jaSelecionado) {
+
+                    botao.classList.remove("selecionado");
+
+                } else {
+
+                    const selecionados = grupo.querySelectorAll(".selecionado");
+
+                    if (limite !== null && selecionados.length >= limite) {
+                        aviso.textContent = "Você pode selecionar no máximo " + limite + " opções.";
+                        return;
+                    }
+
+                    botao.classList.add("selecionado");
+
+                }
+
+                if (aviso) {
+                    const total = grupo.querySelectorAll(".selecionado").length;
+
+                    if (limite !== null) {
+                        aviso.textContent = total + " de " + limite + " selecionadas.";
+                    } else {
+                        aviso.textContent = total + " selecionadas.";
+                    }
+                }
+
+            });
+
+        });
+
+    }
+
+    configurarSelecao("grupoCategorias", 3, "avisoCategorias");
+    configurarSelecao("grupoEstilos", null, null);
+    configurarSelecao("grupoCaracteristicas", null, null);
+
+
+    document.getElementById("formEstabelecimento").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const categoriasSelecionadas = document.querySelectorAll("#grupoCategorias .selecionado");
+
+        const senha = document.getElementById("senhaProprietario").value;
+        const confirmarSenha = document.getElementById("confirmarSenhaProprietario").value;
+
+        if (categoriasSelecionadas.length === 0) {
+            alert("Selecione pelo menos uma categoria.");
+            return;
+        }
+
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem.");
+            return;
+        }
+
+        alert("Formulário validado! A integração com o banco de dados será feita na próxima etapa.");
+
+    });
+
+</script>
+
+</body>
+</html>
