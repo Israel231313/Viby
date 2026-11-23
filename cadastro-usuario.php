@@ -1,0 +1,127 @@
+
+<?php
+require_once "config/conexao.php";
+
+$mensagem = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nome = trim($_POST["nome"]);
+    $email = trim($_POST["email"]);
+    $telefone = trim($_POST["telefone"]);
+    $senha = $_POST["senha"];
+    $confirmarSenha = $_POST["confirmarSenha"];
+
+    if (
+        empty($nome) ||
+        empty($email) ||
+        empty($telefone) ||
+        empty($senha) ||
+        empty($confirmarSenha)
+    ) {
+        $mensagem = "Preencha todos os campos.";
+
+    } elseif ($senha !== $confirmarSenha) {
+
+        $mensagem = "As senhas não são iguais.";
+
+    } else {
+
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+        try {
+
+            $sql = "INSERT INTO usuario
+                    (nome, email, telefone, senha)
+                    VALUES
+                    (:nome, :email, :telefone, :senha)";
+
+            $stmt = $conexao->prepare($sql);
+
+            $stmt->execute([
+                ":nome" => $nome,
+                ":email" => $email,
+                ":telefone" => $telefone,
+                ":senha" => $senhaHash
+            ]);
+
+            $mensagem = "Cadastro realizado com sucesso!";
+
+        } catch (PDOException $erro) {
+
+            $mensagem = "Não foi possível realizar o cadastro. Verifique os dados e tente novamente.";
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuário | VIBY</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+    <main class="paginaCadastro">
+
+        <a href="cadastro.php" class="voltarInicio">← Voltar</a>
+
+        <div class="conteudoCadastro">
+
+            <img src="img/logo.png" alt="Logo Viby" class="logoCadastro">
+
+            <h1>Crie sua conta</h1>
+            <p>Encontre lugares e experiências que combinam com você.</p>
+
+            <?php if (!empty($mensagem)): ?>
+                <p><?php echo htmlspecialchars($mensagem); ?></p>
+            <?php endif; ?>
+
+            <form class="formularioCadastro"
+                  action="cadastro-usuario.php"
+                  method="POST">
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome"
+                       placeholder="Digite seu nome"
+                       maxlength="100" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Digite seu e-mail"
+                       maxlength="150" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone"
+                       placeholder="(00) 00000-0000"
+                       maxlength="20" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha"
+                       placeholder="Crie uma senha" required>
+
+                <label for="confirmarSenha">Confirmar senha</label>
+                <input type="password" id="confirmarSenha"
+                       name="confirmarSenha"
+                       placeholder="Digite a senha novamente" required>
+
+                <button type="submit" class="botaoCadastro">
+                    Criar conta
+                </button>
+
+            </form>
+
+            <p class="textoLogin">
+                Já possui uma conta?
+                <a href="login.html">Fazer login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

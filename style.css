@@ -616,3 +616,201 @@ main {
     margin-top: 5px;
     font-size: 12px;
 }
+
+/* PERFIL PÚBLICO DO ESTABELECIMENTO */
+
+.perfilTopo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    background: #111;
+}
+
+.perfilTopo a {
+    color: #FF7A00;
+    text-decoration: none;
+}
+
+.perfilTopo img {
+    width: 65px;
+}
+
+.perfilEstabelecimento {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    color: #FFF;
+}
+
+.capaEstabelecimento img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.dadosEstabelecimento {
+    padding: 25px 5px;
+}
+
+.categoriaPerfil {
+    color: #FF7A00;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dadosEstabelecimento h1 {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.descricaoPerfil, .sobrePerfil p {
+    color: #AAA;
+    line-height: 1.7;
+}
+
+.informacoesPerfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    color: #DDD;
+    font-size: 14px;
+}
+
+.fotosEstabelecimento, .cardapioPerfil, .sobrePerfil {
+    margin-top: 30px;
+}
+
+.perfilEstabelecimento h2 {
+    margin-bottom: 18px;
+}
+
+.galeriaPerfil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.galeriaPerfil img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.subtituloPerfil {
+    color: #AAA;
+    margin: -8px 0 25px;
+}
+
+.cardapioPerfil h3 {
+    color: #FF7A00;
+    margin: 25px 0 12px;
+}
+
+.itemCardapio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    margin-bottom: 10px;
+    background: #1C1C1C;
+    border: 1px solid #353535;
+    border-radius: 12px;
+}
+
+.itemCardapio h4 {
+    margin-bottom: 7px;
+}
+
+.itemCardapio p {
+    color: #AAA;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.itemCardapio strong {
+    color: #FF7A00;
+    white-space: nowrap;
+}
+
+.sobrePerfil {
+    background: #1C1C1C;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.avisoDemonstracao {
+    color: #777;
+    text-align: center;
+    font-size: 12px;
+    margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+    .capaEstabelecimento img {
+        height: 210px;
+    }
+
+    .galeriaPerfil {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .galeriaPerfil img {
+        height: 130px;
+    }
+
+    .informacoesPerfil {
+        flex-direction: column;
+    }
+
+    .dadosEstabelecimento h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* CARDÁPIO EXPANSÍVEL */
+
+.categoriaCardapio {
+    margin-bottom: 12px;
+    background: #1C1C1C;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.categoriaCardapio summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.categoriaCardapio summary::-webkit-details-marker {
+    display: none;
+}
+
+.categoriaCardapio summary span {
+    color: #FF7A00;
+    font-size: 22px;
+}
+
+.categoriaCardapio[open] summary {
+    border-bottom: 1px solid #353535;
+}
+
+.categoriaCardapio[open] summary span {
+    transform: rotate(45deg);
+}
+
+.categoriaCardapio .itemCardapio {
+    margin: 10px;
+}
