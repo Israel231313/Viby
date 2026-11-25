@@ -1,27 +1,34 @@
+
 <?php
-// 1. Informações do servidor e do banco
-$host = "127.0.0.1";
-$banco = "viby";
-$usuario = "root";
-$senha = "eueramaluco2313";
 
-// 2. Tenta estabelecer a conexão
-try {
+class Conexao {
 
-    // 3. Cria a conexão usando PDO
-    $conexao = new PDO(
-        "mysql:host=$host;dbname=$banco;charset=utf8mb4",
-        $usuario,
-        $senha
-    );
+    private static $host = "127.0.0.1";
+    private static $banco = "viby";
+    private static $usuario = "root";
+    private static $senha = "";
 
-    // 4. Configura o tratamento de erros
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    public static function conectar() {
 
-// 5. Captura possíveis erros
-} catch (PDOException $erro) {
+        try {
 
-    die("Erro na conexão: " . $erro->getMessage());
+            $conexao = new PDO(
+                "mysql:host=" . self::$host . ";dbname=" . self::$banco . ";charset=utf8mb4",
+                self::$usuario,
+                self::$senha
+            );
 
+            $conexao->setAttribute(
+                PDO::ATTR_ERRMODE,
+                PDO::ERRMODE_EXCEPTION
+            );
+
+            return $conexao;
+
+        } catch (PDOException $erro) {
+
+            die("Erro na conexão: " . $erro->getMessage());
+
+        }
+    }
 }
-?>

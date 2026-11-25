@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botecos | Viby</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 
     <style>
         .paginaBotecos {
@@ -83,6 +83,10 @@
             font-weight: bold;
         }
 
+        .botaoVerBoteco:hover {
+            background: #e66d00;
+        }
+
         .avisoBotecos {
             color: #777;
             text-align: center;
@@ -107,7 +111,10 @@
 
         <h1>Botecos em destaque</h1>
 
-        <p>Encontre um lugar para reunir os amigos, aproveitar bons petiscos e curtir a noite.</p>
+        <p>
+            Encontre um lugar para reunir os amigos,
+            aproveitar bons petiscos e curtir a noite.
+        </p>
     </div>
 
     <section class="listaBotecos">
@@ -126,7 +133,7 @@
 
                 <p>📍 Centro – Ponta Grossa</p>
 
-                <a href="perfil-estabelecimento.php" class="botaoVerBoteco">
+                <a href="visualizar-estabelecimento.php" class="botaoVerBoteco">
                     Ver estabelecimento →
                 </a>
             </div>
@@ -147,6 +154,10 @@
                 <p>📍 Centro – Ponta Grossa</p>
 
                 <span>Estabelecimento demonstrativo</span>
+
+                <a href="visualizar-estabelecimento.php" class="botaoVerBoteco">
+                    Ver estabelecimento →
+                </a>
             </div>
         </article>
 

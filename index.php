@@ -3,9 +3,19 @@
 session_start();
 
 $usuarioLogado = isset($_SESSION["id_usuario"]);
-$nomeUsuario = $usuarioLogado
-    ? htmlspecialchars($_SESSION["nome_usuario"], ENT_QUOTES, "UTF-8")
-    : "";
+$estabelecimentoLogado = isset($_SESSION["id_estabelecimento"]);
+
+$contaLogada = $usuarioLogado || $estabelecimentoLogado;
+
+if ($usuarioLogado) {
+    $nomeConta = $_SESSION["nome_usuario"] ?? "";
+} elseif ($estabelecimentoLogado) {
+    $nomeConta = $_SESSION["nome_estabelecimento"] ?? "";
+} else {
+    $nomeConta = "";
+}
+
+$nomeConta = htmlspecialchars($nomeConta, ENT_QUOTES, "UTF-8");
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +32,27 @@ $nomeUsuario = $usuarioLogado
 <section class="hero">
 
     <nav class="menuConta">
+        <a href="ajuda.php">Ajuda</a>
 
-        <?php if ($usuarioLogado): ?>
-            <span>Olá, <?php echo $nomeUsuario; ?>!</span>
-            <a href="perfil.php">Meu perfil</a>
+        <?php if ($contaLogada): ?>
+
+            <span>Olá, <?php echo $nomeConta; ?>!</span>
+
+            <?php if ($usuarioLogado): ?>
+                <a href="perfil.php">Meu perfil</a>
+            <?php endif; ?>
+
+            <?php if ($estabelecimentoLogado): ?>
+                <a href="painel-estabelecimento.php">Painel do estabelecimento</a>
+            <?php endif; ?>
+
             <a href="logout.php" class="botaoConta">Sair</a>
+
         <?php else: ?>
+
             <a href="login.php">Entrar</a>
             <a href="cadastro.html" class="botaoConta">Cadastrar-se</a>
+
         <?php endif; ?>
 
     </nav>
@@ -98,15 +121,14 @@ $nomeUsuario = $usuarioLogado
         <div class="listaCategorias">
 
             <div class="cardCategoria">
-                <img src="img/categorias/bares.jpg" alt="Bares">
+                <img src="img/categorias/bare.jpg" alt="Bares">
                 <h3>Bares</h3>
             </div>
 
-          
             <a href="/Viby/botecos.php" class="cardCategoria" style="text-decoration:none; color:inherit; cursor:pointer;">
-    <img src="img/categorias/botecos.jpg" alt="Botecos">
-    <h3>Botecos</h3>
-</a>
+                <img src="img/categorias/bares.jpg" alt="Botecos">
+                <h3>Botecos</h3>
+            </a>
 
             <div class="cardCategoria">
                 <img src="img/categorias/restaurantes.jpg" alt="Restaurantes">

@@ -3,6 +3,7 @@
 session_start();
 
 require_once __DIR__ . "/config/conexao.php";
+$conexao = Conexao::conectar();
 
 if (!isset($_SESSION["id_usuario"])) {
     header("Location: login.php");

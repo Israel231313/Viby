@@ -1,6 +1,5 @@
-
 <?php
-require_once "config/conexao.php";
+require_once "dao/UsuarioDAO.php";
 
 $mensagem = "";
 
@@ -31,19 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         try {
 
-            $sql = "INSERT INTO usuario
-                    (nome, email, telefone, senha)
-                    VALUES
-                    (:nome, :email, :telefone, :senha)";
+            $usuario = new Usuario($nome, $email, $telefone, $senhaHash);
 
-            $stmt = $conexao->prepare($sql);
-
-            $stmt->execute([
-                ":nome" => $nome,
-                ":email" => $email,
-                ":telefone" => $telefone,
-                ":senha" => $senhaHash
-            ]);
+            $usuarioDAO = new UsuarioDAO();
+            $usuarioDAO->cadastrar($usuario);
 
             $mensagem = "Cadastro realizado com sucesso!";
 
@@ -67,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <main class="paginaCadastro">
 
-        <a href="cadastro.php" class="voltarInicio">← Voltar</a>
+        <a href="cadastro.html" class="voltarInicio">← Voltar</a>
 
         <div class="conteudoCadastro">
 

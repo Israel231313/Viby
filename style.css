@@ -814,3 +814,144 @@ main {
 .categoriaCardapio .itemCardapio {
     margin: 10px;
 }
+
+
+/* PAINEL DO ESTABELECIMENTO */
+
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #1C1C1C;
+    border-bottom: 1px solid #2B2B2B;
+}
+
+.painel-logo {
+    color: #FF7A00;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.painel-sair {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.painel-sair:hover {
+    color: #FF7A00;
+}
+
+.painel-container {
+    width: 84%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.painel-boas-vindas {
+    margin-bottom: 40px;
+}
+
+.painel-subtitulo {
+    color: #FF7A00;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.painel-boas-vindas h1 {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.painel-boas-vindas p {
+    color: #AAAAAA;
+    font-size: 16px;
+}
+
+.painel-boas-vindas strong {
+    color: #FF7A00;
+}
+
+.painel-opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.painel-card {
+    position: relative;
+    display: block;
+    min-height: 190px;
+    padding: 28px;
+    background: #1C1C1C;
+    border: 1px solid #2B2B2B;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.painel-card:hover {
+    border-color: #FF7A00;
+    transform: translateY(-4px);
+}
+
+.painel-card-icone {
+    color: #FF7A00;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.painel-card h2 {
+    color: #FFFFFF;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.painel-card p {
+    color: #AAAAAA;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.painel-card-seta {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    color: #FF7A00;
+    font-size: 24px;
+}
+
+.painel-footer {
+    padding: 25px;
+    text-align: center;
+    color: #777777;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-top: 1px solid #2B2B2B;
+}
+
+@media (max-width: 700px) {
+    .painel-header {
+        padding: 18px 6%;
+    }
+
+    .painel-container {
+        width: 88%;
+        margin: 40px auto;
+    }
+
+    .painel-boas-vindas h1 {
+        font-size: 26px;
+    }
+
+    .painel-opcoes {
+        grid-template-columns: 1fr;
+    }
+}

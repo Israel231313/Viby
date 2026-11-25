@@ -21,7 +21,7 @@
         <h1>Cadastre seu estabelecimento</h1>
         <p>Apresente seu negócio e ajude as pessoas a encontrarem sua vibe.</p>
 
-        <form class="formularioCadastro" id="formEstabelecimento">
+      <form class="formularioCadastro" id="formEstabelecimento" method="POST" action="cadastro-estabelecimento.php">
 
             <h2 class="tituloGrupo">Dados do estabelecimento</h2>
 
@@ -184,8 +184,7 @@
 
     document.getElementById("formEstabelecimento").addEventListener("submit", function(event) {
 
-        event.preventDefault();
-
+    
         const categoriasSelecionadas = document.querySelectorAll("#grupoCategorias .selecionado");
 
         const senha = document.getElementById("senhaProprietario").value;
@@ -201,7 +200,18 @@
             return;
         }
 
-        alert("Formulário validado! A integração com o banco de dados será feita na próxima etapa.");
+       ["Categorias", "Estilos", "Caracteristicas"].forEach(function(tipo) {
+    const grupo = document.getElementById("grupo" + tipo);
+    const selecionados = grupo.querySelectorAll(".selecionado");
+
+    selecionados.forEach(function(botao) {
+        const campo = document.createElement("input");
+        campo.type = "hidden";
+        campo.name = tipo.toLowerCase() + "[]";
+        campo.value = botao.dataset.valor;
+        document.getElementById("formEstabelecimento").appendChild(campo);
+    });
+});
 
     });
 
