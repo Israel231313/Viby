@@ -72,3 +72,6 @@ O ChatGPT foi utilizado como ferramenta de apoio durante o desenvolvimento do pr
 ## Demonstração
 
 Serão adicionadas capturas de tela da aplicação e demonstrações das funcionalidades desenvolvidas.
+## Demonstração em vídeo
+
+[Assistir à apresentação do projeto Viby](https://drive.google.com/file/d/1c5rPqn-mtRkqh2mtzj7BLhbqAGTfTFLi/view?usp=sharing)
